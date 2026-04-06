@@ -11,7 +11,8 @@ describe('lib clients', () => {
 
   it('resend client is defined', async () => {
     process.env.RESEND_API_KEY = 'test-resend-key'
-    const { resend } = await import('../resend')
-    expect(resend).toBeDefined()
+    const { createResendClient } = await import('../resend')
+    const client = createResendClient()
+    expect(client).toBeDefined()
   })
 })
